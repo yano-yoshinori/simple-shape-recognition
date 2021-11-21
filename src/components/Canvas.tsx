@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import assert from "assert";
-import { FabricCanvas } from "../canvas/FabricCanvas";
+import { FabricCanvasInitializer } from "../canvas/FabricCanvasInitializer";
 
 export function Canvas() {
   const ref = useRef<HTMLDivElement>(null);
@@ -11,7 +11,7 @@ export function Canvas() {
     const canvasEl = document.createElement("canvas");
     ref.current.append(canvasEl);
 
-    new FabricCanvas(canvasEl);
+    new FabricCanvasInitializer(canvasEl);
   }, []);
 
   return <div ref={ref} />;
